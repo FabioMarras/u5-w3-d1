@@ -47,6 +47,7 @@ public class ExceptionsHandler {
         }
     }
 
+
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)  // 500
     public ErrorsPayload handleGeneric(Exception e) {
