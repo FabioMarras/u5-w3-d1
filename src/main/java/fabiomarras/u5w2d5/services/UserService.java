@@ -41,6 +41,10 @@ public class UserService {
             return userRepository.findById(id).orElseThrow(()-> new NotFoundException(id));
     }
 
+    public User findByEmail(String email){
+        return userRepository.findByEmail(email).orElseThrow(()-> new NotFoundException(email));
+    }
+
     //POST /user - crea uno user
     public User save(@RequestBody NewUserRequestDTO body){
             User newUser = new User();
@@ -48,6 +52,7 @@ public class UserService {
             newUser.setName(body.name());
             newUser.setLastName(body.lastName());
             newUser.setEmail(body.email());
+            newUser.setPassword(body.password());
             User saveUser = userRepository.save(newUser);
             return saveUser;
     }

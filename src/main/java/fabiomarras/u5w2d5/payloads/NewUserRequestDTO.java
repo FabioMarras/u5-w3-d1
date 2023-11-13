@@ -22,6 +22,7 @@ public record NewUserRequestDTO(
         @Email(message = "Inserisci un indirizzo email valido")
         String email,
         String avatar,
+        String password,
         List<Dispositivo> dispositivo,
 
         List<String> errorsList
